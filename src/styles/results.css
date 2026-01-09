@@ -1,0 +1,106 @@
+.results {
+  background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+  border-top: 1px solid var(--border-color);
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-2xl);
+}
+
+.result-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-2xl);
+  transition: all var(--transition-base);
+  border-top: 3px solid var(--primary);
+}
+
+.result-card:hover {
+  background: var(--hover-bg);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-5px);
+}
+
+.result-category {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xl);
+  color: var(--primary);
+}
+
+.result-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.result-item {
+  padding: var(--spacing-md);
+  background: rgba(0, 212, 255, 0.02);
+  border-radius: var(--radius-md);
+  border-left: 2px solid var(--border-color);
+  transition: all var(--transition-base);
+}
+
+.result-item.highlight {
+  background: rgba(0, 212, 255, 0.08);
+  border-left-color: var(--primary);
+}
+
+.result-item:hover {
+  background: rgba(0, 212, 255, 0.12);
+}
+
+.result-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-tertiary);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+}
+
+.result-values {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.result-values .before {
+  color: var(--text-tertiary);
+  text-decoration: line-through;
+  font-size: 0.95rem;
+}
+
+.result-values .value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.result-values .value.primary {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.result-values .improvement {
+  color: #00ff88;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .result-values {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
