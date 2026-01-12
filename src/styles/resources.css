@@ -1,0 +1,115 @@
+.resources-section {
+  background: var(--bg-primary);
+  padding: var(--spacing-3xl) 0;
+  border-top: 2px solid var(--primary);
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-gray);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-2xl);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.resource-card {
+  background: var(--bg-secondary);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  color: var(--text-light);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.resource-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(0, 173, 181, 0.25);
+  border-color: var(--primary-light);
+}
+
+.resource-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.resource-icon {
+  font-size: 2rem;
+}
+
+.resource-card h3 {
+  font-size: 1.25rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin: 0;
+}
+
+.resource-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.resource-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(0, 173, 181, 0.1);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.resource-item:hover {
+  background: rgba(0, 173, 181, 0.2);
+  transform: translateX(4px);
+}
+
+.file-icon {
+  font-size: 1.2rem;
+}
+
+.resource-item a {
+  color: var(--primary-light);
+  text-decoration: none;
+  font-weight: 500;
+  flex: 1;
+  transition: color var(--transition-base);
+}
+
+.resource-item:hover a {
+  color: #ffffff;
+}
+
+.resources-note {
+  background: var(--bg-tertiary);
+  border-left: 4px solid var(--primary);
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-lg);
+  color: var(--text-light);
+  text-align: center;
+}
+
+.resources-note p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-header {
+    flex-wrap: wrap;
+  }
+}

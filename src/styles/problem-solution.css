@@ -1,5 +1,11 @@
 .problem-solution {
   background: var(--bg-dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3xl) var(--spacing-xl);
+  scroll-margin-top: 80px;
 }
 
 .problems-section,

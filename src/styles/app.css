@@ -1,16 +1,150 @@
+/* Fixed layout structure to prevent horizontal shift */
 .app {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--bg-dark);
+  background-color: var(--bg-primary);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.page-wrapper {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 section {
-  padding: var(--spacing-3xl) 0;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  scroll-margin-top: 80px;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Page title styles */
+.page-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: var(--spacing-2xl);
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-gray);
+  margin-bottom: var(--spacing-2xl);
+  line-height: 1.6;
+}
+
+/* Scroll animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation */
+.stagger-item {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.stagger-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stagger-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stagger-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stagger-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@media (max-width: 1024px) {
+  section {
+    min-height: auto;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 768px) {
   section {
-    padding: var(--spacing-2xl) 0;
+    min-height: auto;
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-container {
+    padding: 0 var(--spacing-lg);
+  }
+
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+
+  .page-title {
+    font-size: 1.875rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
   }
 }

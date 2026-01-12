@@ -1,0 +1,33 @@
+.simulation-header {
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  padding: 4rem var(--spacing-xl) 3rem;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-light);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.simulation-header .section-container {
+  text-align: center;
+}
+
+.page-content {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--bg-primary);
+}
+
+@media (max-width: 768px) {
+  .simulation-header {
+    padding: 3rem var(--spacing-lg) 2rem;
+  }
+
+  .page-title {
+    font-size: 1.75rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.95rem;
+  }
+}

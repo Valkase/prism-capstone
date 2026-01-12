@@ -1,25 +1,26 @@
-import Header from "./components/Header"
-import Hero from "./components/Hero"
-import Abstract from "./components/Abstract"
-import ProblemSolution from "./components/ProblemSolution"
-import Results from "./components/Results"
-import Technology from "./components/Technology"
-import Team from "./components/Team"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Navigation from "./components/Navigation"
 import Footer from "./components/Footer"
+import HomePage from "./pages/HomePage"
+import SimulationPage from "./pages/SimulationPage"
+import ResourcesPage from "./pages/ResourcesPage"
 import "./styles/app.css"
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <Hero />
-      <Abstract />
-      <ProblemSolution />
-      <Results />
-      <Technology />
-      <Team />
-      <Footer />
-    </div>
+    <Router>
+      <div className="app">
+        <Navigation />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/simulation" element={<SimulationPage />} />
+            <Route path="/resources" element={<ResourcesPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   )
 }
 

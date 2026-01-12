@@ -2,12 +2,17 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  justify-items: center;
   gap: var(--spacing-3xl);
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   padding: var(--spacing-3xl) var(--spacing-xl);
-  background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+  background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
   position: relative;
   overflow: hidden;
+  color: var(--text-light);
+  width: 100%;
+  box-sizing: border-box;
+  scroll-margin-top: 80px;
 }
 
 .hero::before {
@@ -17,7 +22,7 @@
   right: -50%;
   width: 1000px;
   height: 1000px;
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 173, 181, 0.15) 0%, transparent 70%);
   border-radius: 50%;
   animation: pulse 8s ease-in-out infinite;
 }
@@ -43,41 +48,40 @@
   font-weight: 900;
   line-height: 1.1;
   margin-bottom: var(--spacing-lg);
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary-light);
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
   font-size: 1.5rem;
-  color: var(--text-secondary);
+  color: rgba(238, 238, 238, 0.9);
   margin-bottom: var(--spacing-md);
 }
 
 .hero-description {
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: rgba(238, 238, 238, 0.8);
   margin-bottom: var(--spacing-2xl);
   line-height: 1.8;
 }
 
 .cta-button {
   padding: var(--spacing-md) var(--spacing-2xl);
-  background: var(--gradient-primary);
-  color: var(--bg-dark);
+  background-color: var(--primary);
+  color: var(--bg-secondary);
   border: none;
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-base);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 4px 15px rgba(0, 173, 181, 0.3);
 }
 
 .cta-button:hover {
+  background-color: var(--primary-light);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 6px 20px rgba(0, 173, 181, 0.4);
 }
 
 .hero-animation {
@@ -91,10 +95,10 @@
 .animated-grid {
   width: 300px;
   height: 300px;
-  border: 2px solid var(--primary);
-  border-radius: var(--radius-2xl);
+  border: 3px solid var(--primary);
+  border-radius: var(--radius-xl);
   position: relative;
-  background: linear-gradient(45deg, rgba(0, 212, 255, 0.05), rgba(157, 78, 221, 0.05));
+  background: linear-gradient(45deg, rgba(0, 173, 181, 0.1), rgba(26, 230, 240, 0.05));
   animation: rotate 10s linear infinite;
 }
 
@@ -114,7 +118,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid var(--secondary);
+  border: 2px solid var(--primary);
   border-radius: 50%;
 }
 
@@ -127,7 +131,7 @@
 .animated-grid::after {
   width: 100px;
   height: 100px;
-  border-color: var(--primary);
+  border-color: var(--primary-light);
   animation: rotate 6s linear infinite;
 }
 
@@ -135,6 +139,7 @@
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
+    padding: var(--spacing-2xl) var(--spacing-xl);
   }
 
   .hero-title {
@@ -155,6 +160,8 @@
   .hero {
     padding: var(--spacing-2xl) var(--spacing-lg);
     gap: var(--spacing-2xl);
+    min-height: auto;
+    grid-template-columns: 1fr;
   }
 
   .hero-title {
