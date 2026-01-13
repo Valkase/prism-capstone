@@ -1,12 +1,6 @@
 .results {
   background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
   border-top: 1px solid var(--border-color);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--spacing-3xl) var(--spacing-xl);
-  scroll-margin-top: 80px;
 }
 
 .results-grid {
@@ -84,14 +78,17 @@
 .result-values .value {
   font-size: 1.3rem;
   font-weight: 700;
-  color: var(--text-primary);
+  /* improved contrast: changed from transparent text-fill gradient to solid high-contrast color */
+  color: var(--primary);
 }
 
 .result-values .value.primary {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  /* removed gradient text effect and use solid primary color for better contrast */
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  color: var(--primary);
 }
 
 .result-values .improvement {
