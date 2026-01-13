@@ -12,7 +12,7 @@ const Navigation = () => {
     <nav className="navigation">
       <div className="nav-container">
         <RouterLink to="/" className="nav-logo" onClick={() => setIsMenuOpen(false)}>
-          <img src="src\assets\Website logo.png" alt="PRISM Logo" className="nav-logo" />
+          <img src="https://i.postimg.cc/Dz4ybg0p/Website_logo.png" alt="PRISM Logo" className="nav-logo" />
         </RouterLink>
 
         {/* Desktop Navigation */}
